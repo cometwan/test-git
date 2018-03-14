@@ -4,36 +4,14 @@ require('../service/api')
 require('../app.module').directive('ePickdate', ['$timeout','Api', function($timeout,Api) { 
     return {        
         restrict: "A",
-       /* scope: {            
-            select_date: '=',
-            pickADateOptions: '='        
-        },*/
+      
         link: function(scope, element, attrs) {
            
-           /* "current": null,
-            "dateFormat": "default",
-            "locale": "en",
-            "animation": true,
-            "minuteInterval": 30,
-            "firstDayOfWeek": 0,
-            "closeOnSelected": false,
-            "timelistScroll": true,
-            "calendarMouseScroll": true,
-            "todayButton": true,
-            "dateOnly": false,
-            "futureOnly": false,
-            "minDate" : null,
-            "maxDate" : null,
-            "autodateOnStart": true,
-            "minTime":"00:00",
-            "maxTime":"23:59",
-            "onShow": null,
-            "onHide": null,
-            "allowWdays": null*/
-              var zpadding = function(num) {
+        
+            function zpadding(num) {
                 num = ("0" + num).slice(-2);
                 return num;
-            };
+            }
             function getLastDay(year, month) {
               var new_year = year; //取当前的年份
               var new_month = month++; //取下一个月的第一天，方便计算（最后一天不固定）
